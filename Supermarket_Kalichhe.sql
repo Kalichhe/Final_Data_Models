@@ -1,4 +1,5 @@
 -- Active: 1716093420781@@127.0.0.1@3306@Supermarket_Kalichhe
+
 CREATE DATABASE `Supermarket_Kalichhe`;
 
 USE `Supermarket_Kalichhe`;
@@ -35,7 +36,10 @@ CREATE TABLE `Sale` (
     ID_Sale INT AUTO_INCREMENT,
     Date_Sale DATE NOT NULL,
     Total_Sale DECIMAL(10,2) NOT NULL,
-    PRIMARY KEY (ID_Sale)
+    PRIMARY KEY (ID_Sale),
+    ID_Client INT NOT NULL,
+    FOREIGN KEY (ID_Client)
+    REFERENCES `Supermarket_Kalichhe`.`Client` (ID_Client)
 );
 
 CREATE TABLE `Product` (
@@ -45,14 +49,9 @@ CREATE TABLE `Product` (
     Price_Product DECIMAL(10,2) NOT NULL,
     Stock_Product INT NOT NULL,
     Expiration_Date DATE NOT NULL,
-    ID_Client INT,
-    Number_Document_Client INT,
-    RUT_Supplier BIGINT,
-    ID_Category INT,
-    ID_Sale INT,
+    RUT_Supplier BIGINT NOT NULL,
+    ID_Category INT NOT NULL,
     PRIMARY KEY (ID_Product),
-    FOREIGN KEY (ID_Client, Number_Document_Client) 
-    REFERENCES `Supermarket_Kalichhe`.`Client` (ID_Client, Number_Document_Client),
     FOREIGN KEY (RUT_Supplier) 
     REFERENCES `Supermarket_Kalichhe`.`Supplier` (RUT_Supplier),
     FOREIGN KEY (ID_Category)
@@ -62,9 +61,8 @@ CREATE TABLE `Product` (
 CREATE TABLE `Detail_Sale` (
     ID_Detail_Sale INT AUTO_INCREMENT,
     Quantity_Product INT NOT NULL,
-    Subtotal DECIMAL(10,2) NOT NULL,
-    ID_Product INT,
-    ID_Sale INT,
+    ID_Product INT NOT NULL,
+    ID_Sale INT NOT NULL,
     PRIMARY KEY (ID_Detail_Sale),
     FOREIGN KEY (ID_Product)
     REFERENCES `Supermarket_Kalichhe`.`Product` (ID_Product),
