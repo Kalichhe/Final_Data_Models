@@ -33,20 +33,6 @@ CREATE TABLE `Category` (
     PRIMARY KEY (ID_Category)
 );
 
-CREATE TABLE `Sale` (
-    ID_Sale INT AUTO_INCREMENT,
-    Quantity_Product INT NOT NULL,
-    Total_Sale DECIMAL(10,2) NOT NULL,
-    Date_Sale DATE NOT NULL,
-    PRIMARY KEY (ID_Sale),
-    ID_Client INT NOT NULL,
-    ID_Product INT NOT NULL,
-    FOREIGN KEY (ID_Client)
-    REFERENCES `Supermarket_Kalichhe`.`Client` (ID_Client),
-    FOREIGN KEY (ID_Product)
-    REFERENCES `Supermarket_Kalichhe`.`Product` (ID_Product)
-);
-
 CREATE TABLE `Product` (
     ID_Product INT AUTO_INCREMENT,
     Name_Product VARCHAR(50) NOT NULL UNIQUE,
@@ -64,3 +50,16 @@ CREATE TABLE `Product` (
     REFERENCES `Supermarket_Kalichhe`.`Category` (ID_Category)
 );
 
+CREATE TABLE `Sale` (
+    ID_Sale INT AUTO_INCREMENT,
+    Quantity_Product INT NOT NULL,
+    Total_Sale DECIMAL(10,2) NOT NULL,
+    Date_Sale DATE NOT NULL,
+    PRIMARY KEY (ID_Sale),
+    ID_Client INT NOT NULL,
+    ID_Product INT NOT NULL,
+    FOREIGN KEY (ID_Client)
+    REFERENCES `Supermarket_Kalichhe`.`Client` (ID_Client),
+    FOREIGN KEY (ID_Product)
+    REFERENCES `Supermarket_Kalichhe`.`Product` (ID_Product)
+);
