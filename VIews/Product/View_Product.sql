@@ -9,4 +9,4 @@ select
     `Product`.`Expiration_Date` AS `Expiration_Date`,
     `Product`.`RUT_Supplier` AS `RUT_Supplier`,
     `Product`.`ID_Category` AS `ID_Category`
-from `Product`
+from `Product`;

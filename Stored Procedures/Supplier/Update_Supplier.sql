@@ -11,6 +11,6 @@ BEGIN
         Address_Supplier = Address_Supplier,
         Phone_Supplier = Phone_Supplier
     WHERE
-        ID_Supplier = RUT_Supplier;
+        `Supplier`.ID_Supplier = RUT_Supplier;
 END $$
 DELIMITER ;

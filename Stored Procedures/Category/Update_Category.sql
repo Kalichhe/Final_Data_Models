@@ -8,6 +8,6 @@ BEGIN
         Name_Category = Name_Category,
         Description_Category = Description_Category
     WHERE
-        ID_Category = ID_Category;
+        `Category`.ID_Category = ID_Category;
 END $$
 DELIMITER ;

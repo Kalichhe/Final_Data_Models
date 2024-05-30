@@ -9,4 +9,4 @@ select
     `Client`.`Phone_Client` AS `Phone_Client`,
     `Client`.`Address_Client` AS `Address_Client`,
     `Client`.`Status_Client` AS `Status_Client`
-from `Client`
+from `Client`;

@@ -1,6 +1,6 @@
 DROP FUNCTION Sell_Product;
-CREATE FUNCTION `Sell_Product`(Quantity_Product INT, Date_Sale DATE, ID_Client INT, ID_Product INT) RETURNS VARCHAR(50)
-    DETERMINISTIC 
+CREATE FUNCTION `Sell_Product`(Quantity_Product INT, Date_Sale DATE, ID_Client INT, ID_Product INT) RETURNS varchar(50) 
+    DETERMINISTIC
 BEGIN
     DECLARE Price_Product DECIMAL(10,2);
     DECLARE Total DECIMAL(10,2);

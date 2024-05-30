@@ -13,6 +13,6 @@ BEGIN
         RUT_Supplier = RUT_Supplier,
         ID_Category = ID_Category
     WHERE 
-        ID_Product = ID_Product;
+        `Product`.ID_Product = ID_Product;
 END $$
 DELIMITER ;

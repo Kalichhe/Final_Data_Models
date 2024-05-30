@@ -1,5 +1,5 @@
 DROP FUNCTION Return_Phone_Client;
-CREATE FUNCTION `Return_Phone_Client`(Number_Document_Client int) RETURNS varchar(50) CHARSET utf8mb4
+CREATE FUNCTION `Return_Phone_Client`(Number_Document_Client int) RETURNS varchar(50)
     DETERMINISTIC
 BEGIN
 

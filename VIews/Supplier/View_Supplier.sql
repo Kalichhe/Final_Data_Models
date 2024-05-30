@@ -6,4 +6,4 @@ select
     `Supplier`.`Email_Supplier` AS `Email_Supplier`,
     `Supplier`.`Address_Supplier` AS `Address_Supplier`,
     `Supplier`.`Phone_Supplier` AS `Phone_Supplier`
-from `Supplier`
+from `Supplier`;
